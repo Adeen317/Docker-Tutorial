@@ -4,18 +4,13 @@ This repository provides a simple guide and commands for setting up and managing
 
 ## Getting Started
 
-To run Ubuntu in your system using Docker, follow the steps below:
-
-1. Ensure Docker is installed on your system. If not, please refer to the official Docker documentation for installation instructions.
-
-2. Run the following command in your terminal:
+To run Ubuntu in your system using Docker, follow the command below:
 
 ```bash
 docker run -it ubuntu
 ```
 
-Explanation of options used:
-- `-it`: Connects the container to your terminal and keeps it attached, allowing you to interact with it.
+This command connects the container to your terminal and keeps it attached (`-it`), allowing you to interact with it.
 
 ## Docker Basics
 
@@ -25,8 +20,8 @@ Docker Hub is a repository similar to GitHub but for containers. It hosts a vast
 
 ### Images vs Containers
 
-- **Images**: Similar to an operating system, images are the blueprints used to create containers. They contain all the necessary files and configurations.
-- **Containers**: Instances of images running as isolated processes on the host operating system.
+- **Images**: Images are similar to operating systems and serve as blueprints for creating containers.
+- **Containers**: Containers are instances of images running as isolated processes on the host operating system.
 
 ### Common Commands
 
@@ -60,6 +55,32 @@ Here are some common Docker commands to manage your containers and images:
     ```bash
     docker images
     ```
+
+### Port Mapping
+
+Port mapping allows you to map ports between your local machine and the Docker container. For example:
+```bash
+docker run -it -p 1025:1025 image_name
+```
+This command maps port 1025 in the container to port 1025 on your local machine.
+
+### Environment Variables
+
+You can define environment variables for your Docker containers. For example:
+```bash
+docker run -it -e PORT=4000 -p 4000:4000 image_name
+```
+This command sets the `PORT` environment variable to `4000` and maps port `4000` in the container to port `4000` on your local machine.
+
+## Creating Your Own Image and Container
+
+To create your own Docker image and container, use the following command:
+
+```bash
+docker build -t python-world .
+```
+
+This command builds an image named `python-world` based on the `Dockerfile` in the current directory (`.`).
 
 ## Conclusion
 
