@@ -82,6 +82,18 @@ docker build -t python-world .
 
 This command builds an image named `python-world` based on the `Dockerfile` in the current directory (`.`).
 
+## Docker Compose
+
+To build and run your Docker services defined in a `docker-compose.yml` file, use the following command:
+
+```bash
+docker-compose up --build
+```
+
+This command builds the Docker services specified in the `docker-compose.yml` file and starts them up.
+
+
+
 ## Conclusion
 
 This repository aims to provide a basic understanding of setting up and managing Ubuntu environments using Docker. For more advanced usage and customization, please refer to the Docker documentation and community resources.
